@@ -159,7 +159,7 @@ export default function DiwaliCountdown() {
                   <button
                     onMouseOver={moveButton}
                     style={{ top: position.top, left: position.left }}
-                    className="absolute px-4 py-2 bg-red-500 text-white font-semibold"
+                    className="absolute px-4 py-2 bg-red-500 text-white font-semibold z-50"
                   >
                     Stop
                   </button>
