@@ -51,7 +51,7 @@ interface TimeLeft {
 export default function Page1() {
     const [name, setName] = useState('');
     const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [_, setCurrentIndex] = useState(0);
     const [audio] = useState(new Audio('../public/gun.mp3')); // Add the path to your audio file
     const [isPlaying, setIsPlaying] = useState(false);
     const navigate = useNavigate();
