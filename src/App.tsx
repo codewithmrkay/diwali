@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 
 // Diwali date (adjust as needed)
 // const DIWALI_DATE = new Date('2024-11-01T00:00:00')
-const DIWALI_DATE = new Date('2024-10-31T00:22:10')
+const DIWALI_DATE = new Date('2024-10-31T00:25:10')
 
 // Sample daily content (expand this with more content)
 const DAILY_CONTENT = [
