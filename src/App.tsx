@@ -158,6 +158,7 @@ export default function DiwaliCountdown() {
                   </h3>
                   <button
                     onMouseOver={moveButton}
+                    onClick={moveButton}
                     style={{ top: position.top, left: position.left }}
                     className="absolute px-4 py-2 bg-red-500 text-white font-semibold z-50"
                   >
