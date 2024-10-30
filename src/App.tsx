@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import { Card, CardContent } from './components/ui/card';
 import './index.css'
 import { useLocation } from 'react-router-dom';
-import { Button } from './components/ui/button';
-
 // Diwali date (adjust as needed)
 // const DIWALI_DATE = new Date('2024-11-01T00:00:00')
 const DIWALI_DATE = new Date('2024-10-31T00:27:10')
@@ -164,7 +162,8 @@ export default function DiwaliCountdown() {
                     className="absolute px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-lg cursor-pointer transition-all hover:bg-red-700"
                   >
                     Stop
-                  </button>                </div>
+                  </button>
+                </div>
               )}
 
 
