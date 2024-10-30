@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Card, CardContent } from './components/ui/card';
 import './index.css'
 import { useLocation } from 'react-router-dom';
+import { Button } from './components/ui/button';
 
 // Diwali date (adjust as needed)
 // const DIWALI_DATE = new Date('2024-11-01T00:00:00')
@@ -54,6 +55,7 @@ export default function DiwaliCountdown() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFirstVisible, setIsFirstVisible] = useState(true);
   const location = useLocation();
+  const [position, setPosition] = useState({ top: '50%', left: '50%' });
   const { name } = location.state || { name: '' }; // Extracting name from state
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -86,7 +88,11 @@ export default function DiwaliCountdown() {
 
     return () => clearInterval(timer); // Cleanup interval on component unmount
   }, [audio, isPlaying]);
-
+  const moveButton = () => {
+    const randomTop = Math.floor(Math.random() * 90) + '%';
+    const randomLeft = Math.floor(Math.random() * 90) + '%';
+    setPosition({ top: randomTop, left: randomLeft });
+  };
   function calculateTimeLeft(): TimeLeft {
     const difference = +DIWALI_DATE - +new Date()
     let timeLeft: TimeLeft = {
@@ -114,7 +120,7 @@ export default function DiwaliCountdown() {
   return (
     <>
       <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center p-4 overflow-hidden relative z-0">
-        <Card className="w-full max-w-md bg-gray-200/20 backdrop-blur-sm relative z-10">
+        <Card className="h-[80vh] w-full max-w-md bg-gray-200/20 backdrop-blur-sm relative z-10">
           <CardContent className="p-6 rounded-lg">
             <h1 className="text-3xl font-bold text-center text-orange-500 mb-4">Diwali Countdown</h1>
             <div className="text-center mb-6">
@@ -148,12 +154,17 @@ export default function DiwaliCountdown() {
                   </div>
                 </div>
               ) : (
-                <div className="text-lg font-bold flex justify-center items-center flex-col gap-3 text-center">
+                <div className="text-lg font-bold flex flex-col justify-center items-center flex-col gap-7 text-center">
                   <h3 onClick={handleFireworks} className="px-3 py-1 rounded-sm w-fit bg-yellow-500 hover:bg-yellow-600 text-white">
                     Happy Diwali <br /> {name}
                   </h3>
-
-                </div>
+                  <Button
+                    onMouseEnter={moveButton}
+                    style={{ top: position.top, left: position.left }}
+                    className="absolute px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-lg cursor-pointer transition-all hover:bg-red-700"
+                  >
+                    Stop
+                  </Button>                </div>
               )}
 
 
