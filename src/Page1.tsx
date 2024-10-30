@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import { Card, CardContent } from './components/ui/card';
 import './index.css'
 import Box from './Box';
@@ -112,10 +112,6 @@ export default function Page1() {
         }
 
         return timeLeft
-    }
-
-    const handleFireworks = () => {
-
     }
     return (
         <div className='relative w-full h-screen'>
