@@ -158,13 +158,13 @@ export default function DiwaliCountdown() {
                   <h3 onClick={handleFireworks} className="px-3 py-1 rounded-sm w-fit bg-yellow-500 hover:bg-yellow-600 text-white">
                     Happy Diwali <br /> {name}
                   </h3>
-                  <Button
+                  <button
                     onMouseOver={moveButton}
                     style={{ top: position.top, left: position.left }}
                     className="absolute px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-lg cursor-pointer transition-all hover:bg-red-700"
                   >
                     Stop
-                  </Button>                </div>
+                  </button>                </div>
               )}
 
 
