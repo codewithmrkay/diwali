@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Card, CardContent } from './components/ui/card';
 import './index.css'
-import Box from './Box';
 import { useNavigate } from 'react-router-dom';
 
 // Diwali date (adjust as needed)
@@ -115,9 +114,6 @@ export default function Page1() {
     }
     return (
         <div className='relative w-full h-screen'>
-            <div className='absolute  z-[2] pointer-events-none flex items-center justify-center'>
-                <Box />
-            </div>
             <div
                 className="absolute inset-0 z-10 w-full h-screen pointer-events-none"
             ></div>

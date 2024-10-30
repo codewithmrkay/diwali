@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Card, CardContent } from './components/ui/card';
 import './index.css'
-import Box from './Box';
 import { useLocation } from 'react-router-dom';
 
 // Diwali date (adjust as needed)
@@ -114,9 +113,6 @@ export default function DiwaliCountdown() {
   }
   return (
     <>
-      <div className='absolute inset-0 z-10'>
-        <Box />
-      </div>
       <div className="min-h-screen bg-gray-950 flex flex-col items-center justify-center p-4 overflow-hidden relative z-0">
         <Card className="w-full max-w-md bg-gray-200/20 backdrop-blur-sm relative z-10">
           <CardContent className="p-6 rounded-lg">
